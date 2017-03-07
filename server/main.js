@@ -1,3 +1,11 @@
-import { greetUser } from './../imports/utils';
+import { Meteor } from 'meteor/meteor';
+import { Players } from './../imports/api/players';
 
-console.log('Log from /server/main.js');
+Meteor.startup(function () {
+  Players.insert({
+    name: 'Darth',
+    score: '-1'
+  });
+
+  console.log(Players.find().fetch());
+});
