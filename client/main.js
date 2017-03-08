@@ -4,6 +4,8 @@ import { Meteor } from 'meteor/meteor';
 import { Tracker } from 'meteor/tracker';
 
 import { Players } from './../imports/api/players';
+import TitleBar from './../imports/ui/TitleBar';
+import AddPlayer from './../imports/ui/AddPlayer';
 
 const renderPlayers = playersList => {
   return playersList.map(player => {
@@ -44,17 +46,17 @@ const handleSubmit = e => {
   }
 };
 
+
+
 Meteor.startup(() => {
   Tracker.autorun(() => {
     let players = Players.find().fetch();
-
     let title = "Scorekeeper";
-    let user = 'Darth';
     let jsx = (
       <div>
-        <h2>{title}</h2>
-        <p>Hello {user}!</p>
+        <TitleBar />
         {renderPlayers(players)}
+        <AddPlayer />
         <form onSubmit={handleSubmit}>
           <input type="text" name="playerName" placeholder="Player name"/>
           <button>Add Player</button>
