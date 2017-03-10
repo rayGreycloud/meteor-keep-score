@@ -9,8 +9,8 @@ class Player extends Component {
     let score = this.props.player.score;
 
     return (
-      <p key={_id}>
-        {name} has {score} point(s).
+      <div key={_id} className="item">
+        <p>{name} has {score} point(s).</p>
         <button onClick={() => {
           Players.update(_id , {$inc: {score: 1}});
         }}>+1</button>
@@ -18,7 +18,7 @@ class Player extends Component {
           Players.update(_id, {$inc: {score: -1}});
         }}>-1</button>
         <button onClick={() => Players.remove(_id)}>X</button>
-      </p>
+      </div>
     );
   }
 }
