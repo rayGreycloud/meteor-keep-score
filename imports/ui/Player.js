@@ -10,18 +10,25 @@ class Player extends Component {
 
     return (
       <div key={_id} className="item">
-        <p>{name} has {score} point(s).</p>
-        <button className="button button--round"  onClick={() => {
-          Players.update(_id , {$inc: {score: 1}});
-        }}>+1</button>
-        <button className="button button--round"  onClick={() => {
-          Players.update(_id, {$inc: {score: -1}});
-        }}>-1</button>
-        <button className="button button--round"  onClick={() => Players.remove(_id)}>X</button>
+        <div className="player">
+          <div>
+            <h3 className="player__name">{name}</h3>
+            <p className="player__stats">{score} point(s).</p>
+          </div>
+          <div className="player__actions">
+            <button className="button button--round"  onClick={() => {
+              Players.update(_id , {$inc: {score: 1}});
+            }}>+1</button>
+            <button className="button button--round"  onClick={() => {
+              Players.update(_id, {$inc: {score: -1}});
+            }}>-1</button>
+            <button className="button button--round"  onClick={() => Players.remove(_id)}>X</button>
+          </div>
+        </div>
       </div>
     );
   }
-}
+};
 
 Player.propTypes = {
   player: React.PropTypes.object.isRequired

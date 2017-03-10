@@ -3,9 +3,8 @@ import React from 'react';
 class TitleBar extends React.Component {
   renderSubtitle() {
     if (this.props.subtitle) {
-      return <h3>{this.props.subtitle}</h3>
+      return <h3 className="title-bar__subtitle">{this.props.subtitle}</h3>
     }
-    // else statement not require - implicit return undefined
   }
 
   render() {
@@ -24,11 +23,6 @@ class TitleBar extends React.Component {
 TitleBar.propTypes = {
   title: React.PropTypes.string.isRequired,
   subtitle: React.PropTypes.string
-};
-
-// If default props desired
-TitleBar.defaultProps = {
-//  title: 'Scorekeeper'
 };
 
 export default TitleBar;
