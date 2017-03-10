@@ -6,7 +6,7 @@ class PlayerList extends Component {
   renderPlayers() {
     if (this.props.players.length === 0) {
       return (
-        <div className="item">
+        <div className="item item__message">
           <p>Add your first player to get started</p>
         </div>
       )
