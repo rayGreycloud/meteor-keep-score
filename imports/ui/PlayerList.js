@@ -21,7 +21,7 @@ class PlayerList extends Component {
   render() {
     return (
       <div>
-        <FlipMove>
+        <FlipMove maintainContainerHeight={true}>
           {this.renderPlayers()}
         </FlipMove>
       </div>
