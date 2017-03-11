@@ -7,13 +7,17 @@ class Player extends Component {
     let _id = this.props.player._id;
     let name = this.props.player.name;
     let score = this.props.player.score;
+    let rank = this.props.player.rank;
+    let position = this.props.player.position;
 
     return (
       <div key={_id} className="item">
         <div className="player">
           <div>
             <h3 className="player__name">{name}</h3>
-            <p className="player__stats">{score} point(s).</p>
+            <p className="player__stats">
+              {rank} {position} {score} point(s).
+            </p>
           </div>
           <div className="player__actions">
             <button className="button button--round"  onClick={() => {
