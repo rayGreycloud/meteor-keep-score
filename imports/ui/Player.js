@@ -5,14 +5,15 @@ import { Players } from './../api/players';
 class Player extends Component {
   render() {
     let {_id, name, score, rank, position} = this.props.player;
+    let itemClassName = `item item--position-${rank}`;
 
     return (
-      <div key={_id} className="item">
+      <div key={_id} className={itemClassName}>
         <div className="player">
           <div>
             <h3 className="player__name">{name}</h3>
             <p className="player__stats">
-              {rank} {position} {score} point(s).
+              {position} place - {score} point(s).
             </p>
           </div>
           <div className="player__actions">
