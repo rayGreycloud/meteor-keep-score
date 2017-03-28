@@ -1,0 +1,24 @@
+1. Create heroku app
+heroku create unique-app-name
+
+2. Add the buildpack
+heroku buildpacks:set https://github.com/AdmitHub/meteor-buildpack-horse.git
+
+3. Set the Node version
+// To find version number
+meteor node -v
+// Add to package.json
+"engines": { "node": "version number"}
+
+4. Add mongolab add-on
+heroku addons:create mongolab:sandbox
+
+5. Set ROOT_URL
+heroku config:set ROOT_URL="https://unique-app-name.herokuapp.com"
+
+6. Deploy
+git push heroku master
+
+7. Test
+heroku open
+-Check functionality
