@@ -13,6 +13,6 @@
     "react-flip-move": "^2.9.1"
   },
   "engines": {
-    "node": "4.7.3"
+    "node": "4.8.4"
   }
 }
